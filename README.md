@@ -6,6 +6,8 @@ _It can not be used for serious medical purposes._
 The purpose of this work is about to test different deep learning models to detect Alzheimer's disease.
 SVM, CNN, InceptionV3, ResNet50, InceptionResNetV2, VGG19, DenseNet121, MobileNetV2 models have been tested.
 
+### Results
+
 | MODEL             	| ACCURACY 	|
 |-------------------	|----------	|
 | CNN               	| 0.7501   	|
