@@ -1,35 +1,32 @@
 # Alzheimer's Disease Classifier
-This repository includes Sakarya University Final Year Project of me and my teammate [Kader Miyanyedi](https://github.com/Kadermiyanyedi). 
+This repository includes Sakarya University Final Year Project of [Özge Çinko](https://github.com/ozgecinko) and [Kader Miyanyedi](https://github.com/Kadermiyanyedi). 
 
-_It can not be used for serious medical purposes._
+This project aims to find out if an MRI image is Alzheimer's disease or not.
+It is classified according to four different stages of Alzheimer's disease.
+1. Mild Demented
+2. Moderate Demented
+3. Non Demented
+4. Very Mild Demented
 
-The purpose of this work is about to test different deep learning models to detect Alzheimer's disease.
-SVM, CNN, InceptionV3, ResNet50, InceptionResNetV2, VGG19, DenseNet121, MobileNetV2 models have been tested.
+The techical purpose of this project is about to testing different deep learning models to detect Alzheimer's disease.
+In this project CNN, InceptionV3, ResNet50, VGG16 and DenseNet121 models have been tested.
 
 ### Results
 
 | MODEL             	| ACCURACY 	|
 |-------------------	|----------	|
-| CNN               	| 0.7501   	|
-| InceptionV3       	| 0.7765   	|
-| ResNet50          	| 0.7529   	|
-| InceptionResNetV2 	| 0.7795   	|
-| VGG19             	| 0.7500   	|
-| DenseNet121       	| 0.7728   	|
-| DenseNet201       	| 0.7922   	|
-| MobileNetV2       	| 0.7900   	|
+| CNN               	| %86.48  	|
+| InceptionV3       	| %76.80  	|
+| ResNet50          	| %78.20  	|
+| VGG16             	| %88.36   	|
+| DenseNet121       	| %79.45  	|
 
-According to results we decided to use DenseNet201 to make an interface.
+According to results we decided to use DenseNet201 or CNN to make an interface.
 
 
-### Data
+### Dataset
 [Alzheimer's Dataset (4 class of Images)](https://www.kaggle.com/tourist55/alzheimers-dataset-4-class-of-images)
-The data consists of MRI images. The data has four classes of images both in training as well as a testing set:
-
-1. Mild Demented
-2. Moderate Demented
-3. Non Demented
-4. Very Mild Demented
+The data consists of MRI images.
 
 
 ## Clone Project and Run Flask Client
