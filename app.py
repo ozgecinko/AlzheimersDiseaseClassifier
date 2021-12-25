@@ -11,10 +11,10 @@ dependencies = {
 }
 
 verbose_name = {
-	0: "test",
-	1: "test",
-	2: "test",
-	3: "test"
+	0: "Mild Demented",
+	1: "Moderate Demented",
+	2: "Non Demented",
+	3: "Very Mild Demented"
 }
 
 # Select model
