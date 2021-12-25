@@ -30,3 +30,27 @@ The data consists of MRI images. The data has four classes of images both in tra
 2. Moderate Demented
 3. Non Demented
 4. Very Mild Demented
+
+
+## Clone Project and Run Flask Client
+
+**Create and active virtualenv**
+
+```
+python3 -m venv .env
+source .env/bin/active
+```
+
+**Install dependencies**
+
+```
+pip install -r requirements.txt
+```
+
+**Run Flask Client**
+
+```
+python app.py
+```
+
+You can reach the project at localhost:5000.
