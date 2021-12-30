@@ -16,15 +16,15 @@ CNN, InceptionV3, ResNet50, VGG16 and DenseNet121 models have been tested in thi
 
 ### Results
 
-| MODEL             	| ACCURACY 	|
+| Model             	| Accuracy 	|
 |-------------------	|----------	|
 | CNN            	    | %86.48  	|
 | InceptionV3       	| %76.80  	|
-| ResNet50          	| %78.20  	|
-| VGG16             	| %88.36   	|
-| DenseNet121       	| %79.45  	|
+| ResNet50          	| %78.20   	|
+| VGG16             	| %79.45  	|
+| DenseNet121       	| %88.36 	  |
 
-According to results we decided to use CNN to make an interface.
+According to results, we decided to use CNN to make an interface.
 
 
 ### Dataset
