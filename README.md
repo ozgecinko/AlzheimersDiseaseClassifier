@@ -1,5 +1,8 @@
 # Alzheimer's Disease Classifier
 ## Sakarya University Final Year Project of [Özge Çinko](https://github.com/ozgecinko) and [Kader Miyanyedi](https://github.com/Kadermiyanyedi). 
+**This project deployed in Heroku.**
+
+**You can reach the project at https://alzheimersdetection.herokuapp.com/.**
 
 This project aims to find out if an MRI scan is Alzheimer's disease or not.
 It is classified according to four different stages of Alzheimer's disease.
@@ -26,6 +29,7 @@ CNN, InceptionV3, ResNet50, VGG16 and DenseNet121 models have been tested in thi
 
 According to results, we decided to use CNN to make an interface.
 
+_**PS: This project cannot be used for serious medical purposes.**_
 
 ### Dataset
 [Alzheimer's Dataset (4 class of Images)](https://www.kaggle.com/tourist55/alzheimers-dataset-4-class-of-images)
