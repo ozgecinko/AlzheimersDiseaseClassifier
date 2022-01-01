@@ -1,0 +1,1 @@
+web: gumicorn wsgi:app
