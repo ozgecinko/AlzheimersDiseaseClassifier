@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from keras.models import load_model
 from keras.preprocessing import image
 from keras.metrics import AUC
+from PIL import Image
 import numpy as np
 
 app = Flask(__name__)
@@ -11,21 +12,21 @@ dependencies = {
 }
 
 verbose_name = {
-	0: "Mild Demented",
-	1: "Moderate Demented",
-	2: "Non Demented",
-	3: "Very Mild Demented"
+	0: "Non Demented",
+	1: "Very Mild Demented",
+	2: "Mild Demented",
+	3: "Moderate Demented"
 }
 
 # Select model
-model = load_model('cnn_model.h5', compile=False)
+model = load_model('alzheimer_cnn_model.h5', compile=False)
 
 model.make_predict_function()
 
 def predict_label(img_path):
-	test_image = image.load_img(img_path, target_size=(176,176))
+	test_image = Image.open(img_path).convert('L')
 	test_image = image.img_to_array(test_image)/255.0
-	test_image = test_image.reshape(1, 176,176,3)
+	test_image = test_image.reshape(-1, 128, 128, 1)
 
 	predict_x=model.predict(test_image) 
 	classes_x=np.argmax(predict_x,axis=1)
