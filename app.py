@@ -52,9 +52,7 @@ def signup():
 
 @app.route("/", methods=["GET", "POST"])
 def main():
-    if person["is_logged_in"]:
-        return render_template("index.html", person=person)
-    return render_template("login.html")
+    return render_template("index.html", person=person)
 
 
 @app.route("/submit", methods=["GET", "POST"])
