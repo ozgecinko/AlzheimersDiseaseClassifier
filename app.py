@@ -31,6 +31,7 @@ model.make_predict_function()
 
 def predict_label(img_path):
     test_image = Image.open(img_path).convert("L")
+    test_image = test_image.resize((128,128))
     test_image = image.img_to_array(test_image) / 255.0
     test_image = test_image.reshape(-1, 128, 128, 1)
 
