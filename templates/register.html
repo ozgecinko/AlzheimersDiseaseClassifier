@@ -1,10 +1,36 @@
+<!DOCTYPE html>
+<html>
+
 <head>
-    <title>Register Page</title>
+    <title>Register</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
         integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+      
+        <!-- Google Fonts -->
+        <link
+          href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+      
+        <!-- Vendor CSS Files -->
+        <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+        <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+      
+        <!--GitHub icon-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+        <!-- Template Main CSS File -->
+        <link href="static/assets/css/style.css" rel="stylesheet">
+      
 
     <style>
         body,
@@ -12,7 +38,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            background: #e8ecee !important;
+            background: #FFFFFF !important;
         }
 
         .user_card {
@@ -20,7 +46,7 @@
             height: 400;
             margin-top: auto;
             margin-bottom: auto;
-            background: #daedf1;
+            background: #E8ECF5;
             position: relative;
             display: flex;
             justify-content: center;
@@ -38,13 +64,13 @@
         }
 
         #form-title {
-            color: #022938;
+            color: #5777ba;
             font-family: sans-serif;
         }
 
         .login_btn {
             width: 100%;
-            background: #0c455c !important;
+            background: #5777ba !important;
             color: white !important;
         }
 
@@ -58,7 +84,7 @@
         }
 
         .input-group-text {
-            background: rgb(75, 139, 150) !important;
+            background: #5777ba !important;
             color: white !important;
             border: 0 !important;
             border-radius: 0.25rem 0 0 0.25rem !important;
@@ -71,14 +97,37 @@
         }
     </style>
 
+
 </head>
 
 <body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top  header-transparent ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <a href="#"><img src="static/assets/img/logo.png" alt="" class="img-fluid"> Alzheimer's Disease Prediction </a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="http://127.0.0.1:5000">Home</a></li>
+          <li><a class="nav-link scrollto" href="http://127.0.0.1:5000">Alzheimer's Disease Classifier</a></li>
+          <li><a class="nav-link scrollto" href="http://127.0.0.1:5000">About Us</a></li>
+          <li><a class="nav-link scrollto" href="http://127.0.0.1:5000/login">Login</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
     <div class="container h-100">
         <div class="d-flex justify-content-center h-100">
             <div class="user_card">
                 <div class="d-flex justify-content-center mt-4">
-                    <h3 id="form-title">REGISTER ACCOUNT PAGE</h3>
+                    <h3 id="form-title">REGISTER ACCOUNT</h3>
                 </div>
                 <div class="d-flex justify-content-center form_container">
 
