@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>Alzheimer's Disease Prediction</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -25,35 +25,102 @@
     <!-- Template Main CSS File -->
     <link href="static/assets/css/style.css" rel="stylesheet">
 
-    <!-- =======================================================
-  * Template Name: Appland - v4.7.0
-  * Template URL: https://bootstrapmade.com/free-bootstrap-app-landing-page-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <title>Alzheimer's Disease Prediction</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Patrick+Hand&display=swap');
+
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(to right bottom, #bebbbb, #a3bccf, #bee0e4, #b1d8c8, #ecf0e3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #table {
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        .table-rows {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .items {
+            padding: 15px 35px;
+            font-size: 19px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        .table-rows:nth-child(even) {
+            background-color: rgba(95, 197, 208, 0.21);
+        }
+
+        .table-rows:nth-child(odd) {
+            background-color: rgba(55, 131, 138, 0.17);
+        }
+
+        .header-row {
+            background-color: rgba(255, 255, 255, 0.31);
+        }
+    </style>
 </head>
 
 <body>
+    <header id="header" class="fixed-top  header-transparent ">
+        <div class="container d-flex align-items-center justify-content-between">
 
-    {% if results %}
-    {% for result in results %}
-    {{ results[result]["result"] }}
-    <a href="{{results[result]['image_path']}}">Test Image</a>
-    {{ results[result]["created_at"] }}
-    {% endfor %}
-    {% endif %}
+            <div class="logo">
+                <a href="#"><img src="static/assets/img/logo.png" alt="" class="img-fluid"> Alzheimer's Disease
+                    Prediction </a>
+            </div>
 
-    </main><!-- End #main -->
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Alzheimer's Disease Classifier</a></li>
+                    <li><a class="nav-link scrollto" href="#features">About Us</a></li>
+                    {% if person["is_logged_in"] %}
+                    <li><a class="nav-link scrollto" href="/previous-results">Previous Results</a></li>
+                    <li class="nav-link">
+                        {{ person["name"] }}
+                    </li>
+                    {% else %}
+                    <li><a class="nav-link scrollto" href="/login">Login</a></li>
+                    {% endif %}
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
-    <!-- Vendor JS Files -->
-    <script src="static/assets/vendor/aos/aos.js"></script>
-    <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
 
-    <!-- Template Main JS File -->
-    <script src="static/assets/js/main.js"></script>
+        </div>
+    </header><!-- End Header -->
 
+    <h2>Previous Results</h2>
+    <div class="table-section">
+        <table id="table">
+            <tr class="header-row">
+                <th class="header-item items">Result</th>
+                <th class="header-item items">Upload At</th>
+                <th class="header-item items">Image</th>
+            </tr>
+            {% if results %}
+            {% for result in results %}
+            <tr class="table-rows">
+                <td class="items">{{ results[result]["result"] }}</td>
+                <td class="items"> {{ results[result]["created_at"]}} </td>
+                <td class="items">
+                    <a href="{{results[result]['image_path']}}">{{ results[result]["result"] }} Image</a>
+                </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </table>
+    </div>
 </body>
 
 </html>

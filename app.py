@@ -1,5 +1,5 @@
 from datetime import datetime
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 from keras.models import load_model
 from keras.preprocessing import image
 from keras.metrics import AUC
@@ -31,7 +31,7 @@ model.make_predict_function()
 
 def predict_label(img_path):
     test_image = Image.open(img_path).convert("L")
-    test_image = test_image.resize((128,128))
+    test_image = test_image.resize((128, 128))
     test_image = image.img_to_array(test_image) / 255.0
     test_image = test_image.reshape(-1, 128, 128, 1)
 
@@ -70,7 +70,7 @@ def get_output():
         data = {
             "result": predict_result,
             "image_path": img_path,
-            "created_at": str(datetime.now()),
+            "created_at": str(datetime.now().strftime("%Y-%m-%d")),
         }
         db.child("alzheimer_results").child(person["uid"]).push(data)
 
@@ -81,7 +81,6 @@ def get_output():
 
 @app.route("/previous-results", methods=["GET", "POST"])
 def previous_results():
-    print(person)
     if person["is_logged_in"]:
         data = db.child("alzheimer_results").get()
         results = data.val()[person["uid"]]
@@ -102,6 +101,11 @@ def token():
 
             data = db.child("users").get()
             person["name"] = data.val()[person["uid"]]["name"]
+
+            user = auth.refresh(user["refreshToken"])
+            user_id = user["idToken"]
+            session["usr"] = user_id
+
             return redirect(url_for("main"))
         except:
             return redirect(url_for("login"))
@@ -129,6 +133,10 @@ def register():
             data = {"name": name, "email": email}
             db.child("users").child(person["uid"]).set(data)
 
+            user = auth.refresh(user["refreshToken"])
+            user_id = user["idToken"]
+            session["usr"] = user_id
+
             return redirect(url_for("main"))
         except:
             return redirect(url_for("signup"))
@@ -140,4 +148,5 @@ def register():
 
 
 if __name__ == "__main__":
+    app.secret_key = "A0Zr98j/3yX R~XHH!jmN]LWX/,?RT"
     app.run(debug=True)
