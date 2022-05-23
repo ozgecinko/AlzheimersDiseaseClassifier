@@ -67,11 +67,11 @@ def get_output():
 
     if person["is_logged_in"]:
         data = {
-            "user_name": person["name"],
             "result": predict_result,
-            "created_at": datetime.now(),
+            "image_path": img_path,
+            "created_at": str(datetime.now()),
         }
-        db.child("alzheimer_results").child(person["uid"]).set(data)
+        db.child("alzheimer_results").child(person["uid"]).push(data)
 
     return render_template(
         "index.html", prediction=predict_result, img_path=img_path, person=person
@@ -80,8 +80,12 @@ def get_output():
 
 @app.route("/previous-results", methods=["GET", "POST"])
 def previous_results():
-    # Todo: create new previous list template
-    return render_template("index.html")
+    print(person)
+    if person["is_logged_in"]:
+        data = db.child("alzheimer_results").get()
+        results = data.val()[person["uid"]]
+        return render_template("previous_results.html", results=results)
+    return render_template("index.html", person=person)
 
 
 @app.route("/auth/token", methods=["POST", "GET"])
