@@ -84,7 +84,7 @@ def previous_results():
     if person["is_logged_in"]:
         data = db.child("alzheimer_results").get()
         results = data.val()[person["uid"]]
-        return render_template("previous_results.html", results=results)
+        return render_template("previous_results.html", results=results, person=person)
     return render_template("index.html", person=person)
 
 
