@@ -46,6 +46,12 @@ def login():
     return render_template("login.html")
 
 
+@app.route('/logout')
+def logout():
+    person["is_logged_in"] = False
+    return redirect("/")
+
+
 @app.route("/signup")
 def signup():
     return render_template("register.html")
@@ -106,6 +112,7 @@ def token():
             user_id = user["idToken"]
             session["usr"] = user_id
 
+
             return redirect(url_for("main"))
         except:
             return redirect(url_for("login"))
@@ -136,6 +143,7 @@ def register():
             user = auth.refresh(user["refreshToken"])
             user_id = user["idToken"]
             session["usr"] = user_id
+
 
             return redirect(url_for("main"))
         except:
