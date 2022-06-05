@@ -112,9 +112,9 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-            <li><a class="nav-link scrollto" href="http://127.0.0.1:5000/">Home</a></li>
-            <li><a class="nav-link scrollto" href="http://127.0.0.1:5000/#contact">Alzheimer's Disease Classifier</a></li>
-            <li><a class="nav-link scrollto" href="http://127.0.0.1:5000/#features">About Us</a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('main')}}">Home</a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('main')}}">Alzheimer's Disease Classifier</a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('main')}}">About Us</a></li>
             <li><a class="nav-link scrollto" href="/login">Log In</a></li>          
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -132,7 +132,7 @@
                     <h3 id="form-title">LOGIN</h3>
                 </div>
                 <div class="d-flex justify-content-center form_container">
-                    <form action="http://127.0.0.1:5000/auth/token" method="POST">
+                    <form action="/auth/token" method="POST">
                         <div class="input-group mb-3">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -156,7 +156,7 @@
                 </div>
                 <div class="mt-4">
                     <div class="d-flex justify-content-center links">
-                        Don't have an account? <a href="http://127.0.0.1:5000/signup" class="ml-2">Sign Up</a>
+                        Don't have an account? <a href="/signup" class="ml-2">Sign Up</a>
                     </div>
 
                 </div>

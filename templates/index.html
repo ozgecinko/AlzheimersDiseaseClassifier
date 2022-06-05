@@ -45,9 +45,9 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-            <li><a class="nav-link scrollto active" href="http://127.0.0.1:5000/">Home</a></li>
-            <li><a class="nav-link scrollto" href="http://127.0.0.1:5000/#contact">Alzheimer's Disease Classifier</a></li>
-            <li><a class="nav-link scrollto" href="http://127.0.0.1:5000/#features">About Us</a></li>
+            <li><a class="nav-link scrollto active" href="{{url_for('main')}}">Home</a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('main')}}">Alzheimer's Disease Classifier</a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('main')}}">About Us</a></li>
             {% if person["is_logged_in"] %}
             <li><a class="nav-link scrollto" href="/previous-results">Previous Results</a></li>
             <li class="dropdown"><a href="#"><span>{{ person["name"] }}</span> <i class="bi bi-chevron-down"></i></a>
